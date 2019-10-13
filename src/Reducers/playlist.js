@@ -10,7 +10,7 @@ export default function(state = {}, action) {
         };
       case "REMOVE_ITEM_FROM_PLAYLIST":
         const albumSongsRemove = state.albumSongsRemove.findIndex(
-          albumId => albumId === action.payload
+          trackId => trackId === action.payload
         );
         return {
           ...state,

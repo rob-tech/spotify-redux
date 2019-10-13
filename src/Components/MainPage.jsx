@@ -9,6 +9,7 @@ import play from "../PlayerButtons/Play.png"
 import previous from "../PlayerButtons/Previous.png"
 import repeat from "../PlayerButtons/Repeat.png"
 import shuffle from "../PlayerButtons/Shuffle.png"
+import Playlist from "./Playlist"
 //SSimport logo from './logo/';
 //import Shuffel from "../playerButtons/Next.png"
 
@@ -63,6 +64,7 @@ class MainPage extends React.Component {
                 {/* <Route path="/playlist" exact  component={Playlist}/> */}
                 <Route  path="/" exact  component={DisplayMovies}/>
                 <Route  path="/Album/:id" exact component={Album}/>
+                <Route  path="/playlist/trackId" exact component={Playlist}/>
                 </div>
               
                </div>

@@ -1,29 +1,29 @@
-export const handleTracks = (id) => {
-  console.log(id)
-    return async (dispatch, getState) => {
+// export const handleTracks = (id) => {
+//   console.log(id)
+//     return async (dispatch, getState) => {
 
-            var headers = new Headers({
-                "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-                "X-RapidAPI-Key": "c74a0a086emshf55ffb8dbdcb59ap17a486jsnb83bb4d3e387"
-              });
+//             var headers = new Headers({
+//                 "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+//                 "X-RapidAPI-Key": "c74a0a086emshf55ffb8dbdcb59ap17a486jsnb83bb4d3e387"
+//               });
           
-              var response = await fetch(
-                "https://deezerdevs-deezer.p.rapidapi.com/album/" + id,
-                {
-                  method: "GET",
-                  headers: headers
-                }
-              );
-              var tracks = await response.json();
-              tracks = tracks.tracks.data
+//               var response = await fetch(
+//                 "https://deezerdevs-deezer.p.rapidapi.com/album/" + id,
+//                 {
+//                   method: "GET",
+//                   headers: headers
+//                 }
+//               );
+//               var tracks = await response.json();
+//               tracks = tracks.tracks.data
       
-      dispatch({
-        type: "TRACKS",
-        payload: tracks
-      });
+//       dispatch({
+//         type: "TRACKS",
+//         payload: tracks
+//       });
 
-    }
-}
+//     }
+// }
 
 export const handleQueenAlbums = () => {
     return async (dispatch, getState) => {
@@ -47,5 +47,31 @@ var headers = new Headers({
         payload: queenAlbums
       });
     }
+    
 }
 
+export const specificAlbum = (id) => {
+      return async (dispatch, getState) => {
+
+            var headers = new Headers({
+                "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+                "X-RapidAPI-Key": "c74a0a086emshf55ffb8dbdcb59ap17a486jsnb83bb4d3e387"
+              });
+          
+              var response = await fetch(
+                "https://deezerdevs-deezer.p.rapidapi.com/album/" + id,
+                {
+                  method: "GET",
+                  headers: headers
+                }
+              );
+              var album = await response.json();
+   
+      
+      dispatch({
+        type: "SPECIFIC_ALBUM",
+      payload: album
+ 
+      });
+}
+}

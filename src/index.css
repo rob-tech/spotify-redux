@@ -44,10 +44,12 @@ code {
   border-width: 0px 0px 0px 4px;
   color:greenyellow;
  }
+
  .mainLinks {
   color : white;
   font-weight : bold
  }
+ 
  .mainLinks:hover {
   color : yellowgreen
  }
